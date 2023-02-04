@@ -1,14 +1,15 @@
 from selenium import webdriver
 import time
 from selenium import webdriver
-from webdriver_manager.chrome import ChromeDriverManager
-from webdriver_manager.utils import ChromeType
+import webdriver_manager
+#from webdriver_manager.chrome import ChromeDriverManager
+#from webdriver_manager.utils import ChromeType
 from selenium.webdriver.common.by import By
 class SnkrsBot:
 
     def __init__(self, sneaker_url):
         self.sneaker_url =  sneaker_url
-        self.driver = webdriver.Chrome(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+        self.driver = webdriver.Chrome(webdriver_manager.chrome.ChromeDriverManager(chrome_type=webdriver_manager.utils.ChromeType.CHROMIUM).install())
     
     def get_price(self):
         self.driver.get(self.sneaker_url)
