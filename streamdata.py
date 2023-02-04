@@ -9,6 +9,7 @@ import plotly.graph_objects as go
 from plotly import tools
 import plotly.offline as py
 import plotly.express as px
+
 # datetime object containing current date and time
 def current_time():
     now = datetime.now()
